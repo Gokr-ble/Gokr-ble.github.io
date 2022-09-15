@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>安卓手游解包笔记 - Blesson的博客</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Blesson的博客"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Blesson的博客"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="使用unity制作的安卓手游解包注：本文仅限技术讨论，请勿进行任何侵犯他人知识产权的行为。"><meta property="og:type" content="blog"><meta property="og:title" content="安卓手游解包笔记"><meta property="og:url" content="https://gokr-ble.github.io/2020/02/09/%E4%BD%BF%E7%94%A8unity%E5%88%B6%E4%BD%9C%E7%9A%84%E5%AE%89%E5%8D%93%E6%89%8B%E6%B8%B8%E8%A7%A3%E5%8C%85/"><meta property="og:site_name" content="Blesson的博客"><meta property="og:description" content="使用unity制作的安卓手游解包注：本文仅限技术讨论，请勿进行任何侵犯他人知识产权的行为。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://gokr-ble.github.io/gallery/thumbnails/2020-2-9.jpg"><meta property="article:published_time" content="2020-02-09T01:56:51.000Z"><meta property="article:modified_time" content="2020-09-28T03:25:33.473Z"><meta property="article:author" content="Luan Blesson"><meta property="article:tag" content="skills"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://gokr-ble.github.io/gallery/thumbnails/2020-2-9.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://gokr-ble.github.io/2020/02/09/%E4%BD%BF%E7%94%A8unity%E5%88%B6%E4%BD%9C%E7%9A%84%E5%AE%89%E5%8D%93%E6%89%8B%E6%B8%B8%E8%A7%A3%E5%8C%85/"},"headline":"安卓手游解包笔记","image":["https://gokr-ble.github.io/gallery/thumbnails/2020-2-9.jpg"],"datePublished":"2020-02-09T01:56:51.000Z","dateModified":"2020-09-28T03:25:33.473Z","author":{"@type":"Person","name":"Luan Blesson"},"publisher":{"@type":"Organization","name":"Blesson的博客","logo":{"@type":"ImageObject","url":"https://gokr-ble.github.io/img/logo.svg"}},"description":"使用unity制作的安卓手游解包注：本文仅限技术讨论，请勿进行任何侵犯他人知识产权的行为。"}</script><link rel="canonical" href="https://gokr-ble.github.io/2020/02/09/%E4%BD%BF%E7%94%A8unity%E5%88%B6%E4%BD%9C%E7%9A%84%E5%AE%89%E5%8D%93%E6%89%8B%E6%B8%B8%E8%A7%A3%E5%8C%85/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://lib.baomitu.com/font-awesome/5.4.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="fonts.loli.net"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css"><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+          Array
+              .from(document.querySelectorAll('.tab-content'))
+              .forEach($tab => {
+                  $tab.classList.add('is-hidden');
+              });
+          Array
+              .from(document.querySelectorAll('.tabs li'))
+              .forEach($tab => {
+                  $tab.classList.remove('is-active');
+              });
+          const $activeTab = document.querySelector(location.hash);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+          const $tabMenu = document.querySelector(`a[href="${location.hash}"]`);
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="Blesson的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/gallery/thumbnails/2020-2-9.jpg" alt="安卓手游解包笔记"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2020-02-09T01:56:51.000Z" title="2020/2/9 09:56:51">2020-02-09</time>发表</span><span class="level-item"><time dateTime="2020-09-28T03:25:33.473Z" title="2020/9/28 11:25:33">2020-09-28</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a></span><span class="level-item">3 分钟读完 (大约499个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">安卓手游解包笔记</h1><div class="content"><h1 id="使用unity制作的安卓手游解包"><a href="#使用unity制作的安卓手游解包" class="headerlink" title="使用unity制作的安卓手游解包"></a>使用unity制作的安卓手游解包</h1><p>注：本文仅限技术讨论，请勿进行任何侵犯他人知识产权的行为。</p>
+<span id="more"></span>
+
+<p>示例包名：com.hypergryph.arknights</p>
+<h2 id="解包游戏apk"><a href="#解包游戏apk" class="headerlink" title="解包游戏apk"></a>解包游戏apk</h2><p>由于apk是一种压缩文件格式，可以使用任何解压缩软件进行解包。</p>
+<p><img src="/gallery/pictures/2020-2-9/1.png" alt="avatar"></p>
+<p>通过查阅资料可知，各个文件（夹）的作用如下：</p>
+<table>
+<thead>
+<tr>
+<th align="center">文件（夹）名称</th>
+<th align="center">内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">assets</td>
+<td align="center">unity游戏所需资源文件</td>
+</tr>
+<tr>
+<td align="center">lib</td>
+<td align="center">arm和x86所需要的.so文件</td>
+</tr>
+<tr>
+<td align="center">META-INF</td>
+<td align="center">信息包</td>
+</tr>
+<tr>
+<td align="center">res</td>
+<td align="center">存放图标等资源文件</td>
+</tr>
+<tr>
+<td align="center">AndroidManifest.xml</td>
+<td align="center">Android清单文件</td>
+</tr>
+<tr>
+<td align="center">classes.dex</td>
+<td align="center">Android Dalvik可执行文件</td>
+</tr>
+<tr>
+<td align="center">resources.arsc</td>
+<td align="center">编译后的二进制资源文件</td>
+</tr>
+</tbody></table>
+<p>由于是要关注立绘、语音等资源，所以需要重点浏览assets目录。</p>
+<p>如果对游戏机制和具体实现感兴趣，可以反编译classes.dex文件，那就是另外一个故事了。</p>
+<h2 id="查看资源文件"><a href="#查看资源文件" class="headerlink" title="查看资源文件"></a>查看资源文件</h2><p><strong>使用工具：UnityStudio</strong>（下载地址放在文末）</p>
+<p>经努力查找，游戏中使用的美术资源、语音资源都放在assets&#x2F;AB&#x2F;Android中，推测AB为AssetBundle的缩写。</p>
+<p>以下列出各文件的具体位置：</p>
+<table>
+<thead>
+<tr>
+<th align="center">资源类别</th>
+<th align="center">位置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">人物语音</td>
+<td align="center">&#x2F;audio&#x2F;sound_beta_2&#x2F;voice</td>
+</tr>
+<tr>
+<td align="center">攻击、技能音效</td>
+<td align="center">&#x2F;audio&#x2F;sound_beta_2&#x2F;player</td>
+</tr>
+<tr>
+<td align="center">游戏BGM</td>
+<td align="center">&#x2F;audio&#x2F;sound_beta_2&#x2F;music</td>
+</tr>
+<tr>
+<td align="center">立绘、游戏背景</td>
+<td align="center">&#x2F;avg</td>
+</tr>
+<tr>
+<td align="center">其他美术资源</td>
+<td align="center">&#x2F;arts</td>
+</tr>
+<tr>
+<td align="center"><strong>主线剧情文本</strong></td>
+<td align="center">&#x2F;gamedata&#x2F;story&#x2F;obt.ab</td>
+</tr>
+<tr>
+<td align="center">活动剧情文本</td>
+<td align="center">&#x2F;gamedata&#x2F;story&#x2F;activities.ab</td>
+</tr>
+<tr>
+<td align="center">游戏内其他文本及提示</td>
+<td align="center">&#x2F;i18n&#x2F;string_map.ab</td>
+</tr>
+<tr>
+<td align="center">每章标题图片</td>
+<td align="center">&#x2F;spritepace</td>
+</tr>
+<tr>
+<td align="center">历次寻访图片（存在bug）</td>
+<td align="center">&#x2F;ui&#x2F;gacha</td>
+</tr>
+<tr>
+<td align="center">每章内部关卡背景图</td>
+<td align="center">&#x2F;ui&#x2F;stage.ab</td>
+</tr>
+</tbody></table>
+<p>来发个刀子</p>
+<p><img src="/gallery/pictures/2020-2-9/2.png" alt="avatar"></p>
+<p><del>白兔子不要走！</del></p>
+<p><del>最后希望yj快出第七章吧</del></p>
+<p>参考资料：<a target="_blank" rel="noopener" href="https://blog.csdn.net/u011611902/article/details/104154072">https://blog.csdn.net/u011611902/article/details/104154072</a></p>
+<p>UnityStudio：</p>
+<p>​	源码：<a target="_blank" rel="noopener" href="https://github.com/Perfare/AssetStudio">https://github.com/Perfare/AssetStudio</a></p>
+<p>​	latest release：<a target="_blank" rel="noopener" href="https://ci.appveyor.com/project/Perfare/assetstudio/branch/master/artifacts">https://ci.appveyor.com/project/Perfare/assetstudio/branch/master/artifacts</a></p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>安卓手游解包笔记</p><p><a href="https://gokr-ble.github.io/2020/02/09/使用unity制作的安卓手游解包/">https://gokr-ble.github.io/2020/02/09/使用unity制作的安卓手游解包/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Luan Blesson</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2020-02-09</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2020-09-28</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/skills/">skills</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/03/06/pikachu%E9%9D%B6%E5%9C%BA%E7%B3%BB%E5%88%97%E2%80%94%E2%80%94XSS/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">pikachu靶场系列——XSS</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/02/01/%E5%B1%80%E5%9F%9F%E7%BD%91kali%E5%AE%9E%E9%AA%8C/"><span class="level-item">BAN掉那个APP(一)——Kali篇</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="valine-thread"></div><script src="//cdn.jsdelivr.net/npm/leancloud-storage@3/dist/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@1.4.16/dist/Valine.min.js"></script><script>new Valine({
+            el: '#valine-thread',
+            appId: "x9sy4vLofDvJstsjsq3wPt1V-gzGzoHsz",
+            appKey: "ta0UGX1v8XDvKnsnxY7FMjIT",
+            placeholder: "此后如竟无炬火，我们便是唯一的光",
+            avatar: "mm",
+            avatarForce: false,
+            meta: ["nick","mail","link"],
+            pageSize: 10,
+            lang: "zh-CN",
+            visitor: false,
+            highlight: true,
+            recordIP: false,
+            
+            
+            
+            enableQQ: false,
+            requiredFields: [],
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/xi_avatar.jpg" alt="Blesson"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Blesson</p><p class="is-size-6 is-block">Computer Science</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>TJU China</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">26</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">11</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="/" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Gokr-ble"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://space.bilibili.com/286796781"><i class="fab fa-twitter"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#使用unity制作的安卓手游解包"><span class="level-left"><span class="level-item">1</span><span class="level-item">使用unity制作的安卓手游解包</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#解包游戏apk"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">解包游戏apk</span></span></a></li><li><a class="level is-mobile" href="#查看资源文件"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">查看资源文件</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://tjuyjn.top" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Anti-entropy</span></span><span class="level-right"><span class="level-item tag">tjuyjn.top</span></span></a></li><li><a class="level is-mobile" href="https://www.tjuscswyz.cn" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">p4ssw0rd</span></span><span class="level-right"><span class="level-item tag">www.tjuscswyz.cn</span></span></a></li><li><a class="level is-mobile" href="https://daemon.tjunsa.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">daemon</span></span><span class="level-right"><span class="level-item tag">daemon.tjunsa.com</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E5%BF%86%E5%BE%80%E6%98%94%EF%BC%8C%E7%9F%A5%E7%BC%98%E8%B5%B7/"><span class="level-start"><span class="level-item">忆往昔，知缘起</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"><span class="level-start"><span class="level-item">技术分享</span></span><span class="level-end"><span class="level-item tag">19</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%97%A5%E5%B8%B8%E5%88%92%E6%B0%B4/"><span class="level-start"><span class="level-item">日常划水</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/CTF/"><span class="tag">CTF</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/android/"><span class="tag">android</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/bug/"><span class="tag">bug</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/c/"><span class="tag">c#</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/course/"><span class="tag">course</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kali/"><span class="tag">kali</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/memories/"><span class="tag">memories</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/misc/"><span class="tag">misc</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/network/"><span class="tag">network</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/skills/"><span class="tag">skills</span><span class="tag">13</span></a></div></div></div></div></div><div class="column-right-shadow is-hidden-widescreen"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3"><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><figure class="media-left"><a class="image" href="/2022/09/15/PowerShell%E5%9C%A8%E6%96%87%E4%BB%B6%E5%86%85%E6%9F%A5%E6%89%BE%E5%AD%97%E7%AC%A6%E4%B8%B2/"><img src="/gallery/thumbnails/2022-09-15.jpg" alt="PowerShell在文件内查找字符串"></a></figure><div class="media-content"><p class="date"><time dateTime="2022-09-15T06:07:47.000Z">2022-09-15</time></p><p class="title"><a href="/2022/09/15/PowerShell%E5%9C%A8%E6%96%87%E4%BB%B6%E5%86%85%E6%9F%A5%E6%89%BE%E5%AD%97%E7%AC%A6%E4%B8%B2/">PowerShell在文件内查找字符串</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2022/09/14/%E5%8A%A0%E5%AF%86M3U8%E4%B8%8B%E8%BD%BD%E8%A7%A3%E5%AF%86%E6%B5%81%E7%A8%8B%E5%88%86%E6%9E%90/"><img src="/gallery/thumbnails/2022-09-14.png" alt="加密M3U8下载解密流程分析"></a></figure><div class="media-content"><p class="date"><time dateTime="2022-09-14T07:04:16.000Z">2022-09-14</time></p><p class="title"><a href="/2022/09/14/%E5%8A%A0%E5%AF%86M3U8%E4%B8%8B%E8%BD%BD%E8%A7%A3%E5%AF%86%E6%B5%81%E7%A8%8B%E5%88%86%E6%9E%90/">加密M3U8下载解密流程分析</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2020/09/29/mumu%E6%A8%A1%E6%8B%9F%E5%99%A8%E5%90%AF%E5%8A%A8%E6%97%B6%E7%B3%BB%E7%BB%9F%E8%93%9D%E5%B1%8F%E8%A7%A3%E5%86%B3/"><img src="/gallery/thumbnails/2020-9-29.jpg" alt="mumu模拟器启动时系统蓝屏解决"></a></figure><div class="media-content"><p class="date"><time dateTime="2020-09-29T00:17:35.000Z">2020-09-29</time></p><p class="title"><a href="/2020/09/29/mumu%E6%A8%A1%E6%8B%9F%E5%99%A8%E5%90%AF%E5%8A%A8%E6%97%B6%E7%B3%BB%E7%BB%9F%E8%93%9D%E5%B1%8F%E8%A7%A3%E5%86%B3/">mumu模拟器启动时系统蓝屏解决</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2020/09/24/Android%E5%BA%95%E9%83%A8%E5%AF%BC%E8%88%AA%E6%A0%8F%E5%AE%9E%E7%8E%B0/"><img src="/gallery/thumbnails/2020-9-24.png" alt="Android底部导航栏实现"></a></figure><div class="media-content"><p class="date"><time dateTime="2020-09-24T12:05:28.000Z">2020-09-24</time></p><p class="title"><a href="/2020/09/24/Android%E5%BA%95%E9%83%A8%E5%AF%BC%E8%88%AA%E6%A0%8F%E5%AE%9E%E7%8E%B0/">Android底部导航栏实现</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-09-17T02:33:51.000Z">2020-09-17</time></p><p class="title"><a href="/2020/09/17/AccessibilityService%E6%B5%8B%E8%AF%95/">AccessibilityService测试</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/09/"><span class="level-start"><span class="level-item">九月 2022</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/09/"><span class="level-start"><span class="level-item">九月 2020</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/08/"><span class="level-start"><span class="level-item">八月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/03/"><span class="level-start"><span class="level-item">三月 2020</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/02/"><span class="level-start"><span class="level-item">二月 2020</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/12/"><span class="level-start"><span class="level-item">十二月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/10/"><span class="level-start"><span class="level-item">十月 2019</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/09/"><span class="level-start"><span class="level-item">九月 2019</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/08/"><span class="level-start"><span class="level-item">八月 2019</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="Blesson的博客" height="28"></a><p class="is-size-7"><span>&copy; 2022 Luan Blesson</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><div id="outdated"><h6>Your browser is out-of-date!</h6><p>Update your browser to view this website correctly.&amp;npsb;<a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p><p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">×</a></p></div><script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script><script>window.addEventListener("load", function () {
+            outdatedBrowser({
+                bgColor: '#f25648',
+                color: '#ffffff',
+                lowerThan: 'object-fit' // display on IE11 or below
+            });
+        });</script><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
